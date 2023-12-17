@@ -1,0 +1,26 @@
+FROM node:20-alpine
+ARG PACKAGE
+ARG PORT
+
+RUN mkdir -p /home/app/ && mkdir -p /home/app/common/ && mkdir -p /home/app/${PACKAGE}
+WORKDIR /home/app
+COPY ./common/package*.json ./common
+COPY ./common/tsconfig*.json ./common
+COPY ./common/src ./common/src
+WORKDIR /home/app/common/
+RUN yarn
+RUN yarn build
+
+WORKDIR /home/app/${PACKAGE}
+COPY ${PACKAGE}/*.json ./
+COPY ${PACKAGE}/*.ts ./
+
+COPY ${PACKAGE}/src ./src
+
+RUN yarn 
+RUN npm i typescript -g
+RUN npm i rimraf -g
+RUN npm i ts-node -g
+EXPOSE ${PORT}
+
+CMD yarn build && yarn start:prod

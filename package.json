@@ -1,0 +1,30 @@
+{
+  "name": "microservice-template",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "setup": "for D in */; do yarn --cwd \"${D}\"; rm -rf ./node_modules; rm -rf ./yarn.lock; yarn build; done",
+    "eslint": "./node_modules/.bin/eslint",
+    "generate:clients": "cd ./tools/openapi-client-generator; yarn run start",
+    "build:dev": "docker-compose -f docker-compose-dev.yml build",
+    "start:dev": "docker-compose -f docker-compose-dev.yml up",
+    "build:prod": "docker-compose build",
+    "start:prod": "docker-compose up"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-unused-imports": "^4.0.0",
+    "prettier": "^3.2.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
+  }
+}

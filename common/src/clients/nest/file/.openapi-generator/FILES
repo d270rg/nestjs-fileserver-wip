@@ -1,0 +1,14 @@
+.gitignore
+.openapi-generator-ignore
+README.md
+api.module.ts
+api/api.ts
+api/file.service.ts
+configuration.ts
+git_push.sh
+index.ts
+model/createEntityDto.ts
+model/deleteEntitiesDto.ts
+model/entityDto.ts
+model/models.ts
+variables.ts

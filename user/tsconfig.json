@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@common/*":["../common/dist/src/*"],
+      "@common/constants":["../common/dist/constants"],
+      "@src/*":["./src/*"]
+    }
+  },
+  "references": [
+    {"path": "../common/tsconfig.json"}
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "../common"
+  ]
+}

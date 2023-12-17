@@ -1,0 +1,8 @@
+{
+  "name": "openapi-client-generator",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start":"docker-compose build openapi_generator && docker-compose up openapi_generator && ./copy.sh"
+  }
+}

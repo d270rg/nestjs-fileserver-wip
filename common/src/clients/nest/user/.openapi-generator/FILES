@@ -1,0 +1,13 @@
+.gitignore
+.openapi-generator-ignore
+README.md
+api.module.ts
+api/api.ts
+api/user.service.ts
+configuration.ts
+git_push.sh
+index.ts
+model/credentialsDto.ts
+model/models.ts
+model/tokenPayloadDto.ts
+variables.ts
